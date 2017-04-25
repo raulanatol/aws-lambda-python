@@ -14,4 +14,8 @@ zip -r9 /deploy/function.zip *
 cd /usr/local/lib/python2.7/site-packages
 zip -r9 /deploy/function.zip *
 
-aws lambda update-function-code --function-name ${LAMBDA_FUNCTION_NAME} --zip-file fileb:///deploy/function.zip
+if [ -z ${AWS_PROFILE+1} ]; then
+    aws lambda update-function-code --profile ${AWS_PROFILE} --function-name ${LAMBDA_FUNCTION_NAME} --zip-file fileb:///deploy/function.zip
+else
+    aws lambda update-function-code --function-name ${LAMBDA_FUNCTION_NAME} --zip-file fileb:///deploy/function.zip
+fi
