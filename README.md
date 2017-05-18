@@ -8,6 +8,10 @@ Using python2.7
 
 Mandatory
 
+### AWS_UPDATE_FUNCTION
+
+If is set the docker run update the lambda code
+
 ### AWS_PROFILE
 
 Optional
