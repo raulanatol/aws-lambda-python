@@ -6,6 +6,13 @@ set -eu
 pip install -r /lambda/requirements.txt
 rm /lambda/requirements.txt
 
+# Checking TEST_SCRIPT_FIRST variable
+if [ "true" == "$TEST_SCRIPT_FIRST" ]; then
+	echo "Testing..."
+	sh /root/test.sh
+	echo "Testing finished"
+fi
+
 # Create zip
 cd /lambda/
 zip -r9 /deploy/function.zip *
