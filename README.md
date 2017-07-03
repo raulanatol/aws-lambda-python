@@ -27,3 +27,9 @@ Optional
 ### AWS_DEFAULT_REGION
 
 Optional
+
+
+### TEST_SCRIPT_FIRST
+
+Optional. 
+If *true* the upload-lambda execute a test.sh script first. If this script fails the lambda don't be uploaded.

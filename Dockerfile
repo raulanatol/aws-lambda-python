@@ -8,4 +8,5 @@ RUN mkdir /lambda/
 RUN mkdir /deploy/
 
 ADD upload-lambda /bin/
+ADD test.sh /bin/
 
