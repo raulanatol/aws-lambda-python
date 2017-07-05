@@ -29,7 +29,14 @@ Optional
 Optional
 
 
-### TEST_SCRIPT_FIRST
+## Commands
 
-Optional. 
-If *true* the upload-lambda execute a test.sh script first. If this script fails the lambda don't be uploaded.
+### Test
+```bash
+docker run -t raulanatol/aws-lambda-python test
+```
+
+### Deploy
+```bash
+docker run -t raulanatol/aws-lambda-python deploy
+```

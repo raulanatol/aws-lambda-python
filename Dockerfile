@@ -6,7 +6,8 @@ RUN python get-pip.py
 RUN pip install awscli
 RUN mkdir /lambda/
 RUN mkdir /deploy/
+RUN mkdir /code/
 
-ADD upload-lambda /bin/
-ADD test.sh /bin/
-
+ADD deploy.sh /bin/deploy
+ADD test.sh /bin/test
+ADD build.sh /bin/build
