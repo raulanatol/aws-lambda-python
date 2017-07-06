@@ -33,7 +33,7 @@ Optional
 
 ### Test
 ```bash
-docker run -t raulanatol/aws-lambda-python test
+docker run -t raulanatol/aws-lambda-python run_test
 ```
 
 ### Deploy
