@@ -3,12 +3,6 @@
 set -eu
 
 echo "-----------------"
-echo "   Start tests   "
-echo "-----------------"
-
-test.sh
-
-echo "-----------------"
 echo "   Start upload  "
 echo "-----------------"
 

@@ -9,5 +9,5 @@ RUN mkdir /deploy/
 RUN mkdir /code/
 
 ADD deploy.sh /bin/deploy
-ADD test.sh /bin/test
+ADD test.sh /bin/run_test
 ADD build.sh /bin/build
