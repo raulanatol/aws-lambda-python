@@ -1,42 +1,48 @@
 # aws-lambda-python
 
-Using python2.7
+Docker image to do more easy deploy AWS lambdas (python)
+
+Python versions:
+    - 2.7
+    - 3.6
 
 ## Environment variables
 
-### LAMBDA_FUNCTION_NAME
-
-Mandatory
-
-### AWS_UPDATE_FUNCTION
-
-If is set the docker run update the lambda code
-
-### AWS_PROFILE
-
-Optional
-
-### AWS_ACCESS_KEY_ID
-
-Optional
-
-### AWS_SECRET_ACCESS_KEY
-
-Optional
-
-### AWS_DEFAULT_REGION
-
-Optional
-
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| LAMBDA_FUNCTION_NAME | Mandatory | The name of the lambda in AWS |
+| AWS_DEFAULT_REGION | Mandatory | The AWS lambda region |
 
 ## Commands
 
 ### Test
+
+Run the tests of your code in the docker image
+
 ```bash
 docker run -t raulanatol/aws-lambda-python run_test
 ```
 
 ### Deploy
+
+Upload the lambda code including yours libraries/requirements to AWS Lambda
+
 ```bash
 docker run -t raulanatol/aws-lambda-python deploy
+```
+
+## Example Dockerfile
+
+```bash
+FROM raulanatol/aws-lambda-python@2.7
+
+ENV AWS_DEFAULT_REGION='eu-west-1'
+ENV LAMBDA_FUNCTION_NAME='my-test-lambda'
+
+ADD requirements.txt /lambda/
+ADD . /code
+ADD src /lambda/
+ADD .scripts/test.sh /bin/run_test
+
+RUN build
 ```
