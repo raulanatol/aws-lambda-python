@@ -37,7 +37,7 @@ RUN cd /usr/local/bin \
  	&& rm -f get-pip.py \
     && cd /usr/local/bin \
     && ln -s pip3.6 pip \
-    && pip install awscli
+    && pip --upgrade install awscli
 
 RUN mkdir /lambda/
 RUN mkdir /deploy/
