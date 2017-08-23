@@ -7,7 +7,7 @@ echo "   Start upload  "
 echo "-----------------"
 
 cd /lambda/
-zip -9 /deploy/function.zip *
+zip -r9 /deploy/function.zip *
 cd /usr/local/lib/python3.6/site-packages
 zip -r9 /deploy/function.zip ./
 if [ -d "/usr/local/lib/python3.6/lib-dynload/" ]; then
